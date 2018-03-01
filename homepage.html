@@ -1,0 +1,103 @@
+<head>
+    <title>The Cut-Up Method</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+    body {
+      background-color: #ebd5b3;
+      margin: 0;
+      font-family: Georgia;
+    }
+    .header {
+        text-align: center;
+    }
+    .title{
+        font-size: 48px;
+        margin: 10px;
+    }
+    .quote{
+        padding: 4px;
+        background-color: #fff5d2;
+        border: 2px solid black;
+        border-radius: 10px;
+        display: flex;
+        font-family: Brush Script MT;
+        font-size: 30px;
+        margin-right: 50px;
+        margin-left: 50px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .topic-wrapper{
+        display: flex;
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .topic{
+        font-family: Georgia;
+        padding: 4px;
+        background-color: #fff5d2;
+        border: 2px solid black;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .subtitle{
+        text-decoration: underline;
+        font-size: 24px;
+        margin: 5px;
+    }
+    .info{
+        font-size: 18px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id = "app">
+        <div class="header">
+            <div class="title">Cut-Up Writing</div>
+            <div class="quote">
+                <div>“All writing is in fact cut ups. A collage of words read heard overhead. What else? Use of scissors renders the process explicit and subject to extension and variation.” – William S. Burroughs</div>
+            </div>
+        </div>
+
+        <div class="topic-wrapper">
+            <div class="topic" v-for="topic in topics">
+                <div class="subtitle">{{ topic.subtitle }}</div>
+                <div class="info">{{ topic.info }}</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        ;
+        var topics = [
+            {
+                subtitle: "What is the cut-up method?",
+                info: "“Cut-up” is a method of generating written pieces randomly from existing work. Though there are several variations, the general procedure is to first use scissors to cut multiple exixting works up into individual words or phrases. Then, the writer mixes up these words or phrases and randomly selects them one at a time, laying thiem out in the order in which they are selected. The result is a new, completely random poem, story, or other written work. ",
+            },
+
+            {
+                subtitle: "Who was William S. Burroughs?",
+                info: "Burroughs was an author who used the cut-up method in the 1960s. Some of his more well-known cut-up works include the following: “Minutes To Go,” “The Exterminator,” and “The Third Mind.” Brion Gysin, another cut-up author, collaborated with Burroughs on these novels. The two authors also made several movies together that employed the cut-up method. None of these films were recieved well by critics, but Burroughs remained committed to his belief in the benefits of using the cut-up method to create both written works and films. ",
+            },
+
+            {
+                subtitle: "Why use the cut-up method?",
+                info: "things",
+
+            },
+        ];
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                topics: topics,
+            },
+        });
+    </script>
+</body>
