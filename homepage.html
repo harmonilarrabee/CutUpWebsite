@@ -22,8 +22,8 @@
         display: flex;
         font-family: Brush Script MT;
         font-size: 30px;
-        margin-right: 50px;
-        margin-left: 50px;
+        margin-right: 80px;
+        margin-left: 80px;
         margin-top: 20px;
         margin-bottom: 20px;
     }
@@ -46,12 +46,27 @@
         margin-bottom: 20px;
     }
     .subtitle{
-        text-decoration: underline;
         font-size: 24px;
         margin: 5px;
     }
     .info{
         font-size: 18px;
+    }
+    .link-wrapper{
+        display: flex;
+        justify-content: space-around;
+    }
+    a{
+        font-family: Georgia;
+        font-size: 24px;
+        margin: 20px;
+        color: black;
+    }
+    a:link, a:visited{
+        color: black;
+    }
+    a:hover, a:active{
+        color: darkslategray;
     }
     </style>
 </head>
@@ -71,6 +86,10 @@
                 <div class="info">{{ topic.info }}</div>
             </div>
         </div>
+
+        <div class="link-wrapper">
+            <a href="fairytales.html">Click here to create your own cut-up stories!</a>
+        </div>
     </div>
 
     <script>
@@ -88,7 +107,7 @@
 
             {
                 subtitle: "Why use the cut-up method?",
-                info: "things",
+                info: "Words are the lens through which we percieve the world. Almost everything we do is filtered through language, whether by talking about it, writing about it, or even just thinking about it. However, language has many rules and restrictions, and our perception of the world is often affected by those limitations. Using the cut-up technique allows us to suspend those rules and think about words and language in an unconventional way, thereby expanding our ability to percieve the world in new and different ways. ",
 
             },
         ];
