@@ -17,6 +17,13 @@
     .instructions{
         font-size: 24px;
     }
+    .dropdown{
+        margin: 20px;
+    }
+    .dropdown-wrapper{
+        display: flex;
+        justify-content: space-around;
+    }
     </style>
 </head>
 
@@ -25,15 +32,38 @@
         <div class="header">
             <div class="title">Fairy Tale Cut-Ups</div>
             <div class="instructions">Select two fairy tales, then click the button below to combine them into one cut-up style story.</div>
-        </div> 
+        </div>
 
-        
+        <div class="dropdown-wrapper">
+            <div class="dropdown">
+                <select v-model="titles">
+                    <option disabled value="">Please select a fairy tale</option>
+                    <option>Little Red Riding Hood</option>
+                    <option>Snow White and the Seven Dwarves</option>
+                    <option>Hansel and Gretel</option>
+                    <option>Cinderella</option>
+                </select>
+            </div>
+            <div class="dropdown">
+                <select v-model="titles">
+                    <option disabled value="">Please select a fairy tale</option>
+                    <option>Little Red Riding Hood</option>
+                    <option>Snow White and the Seven Dwarves</option>
+                    <option>Hansel and Gretel</option>
+                    <option>Cinderella</option>
+                </select>
+            </div>
+        </div>
     </div>
 
     <script>
         var app = new Vue({
             el: '#app',
             data: {
+                titles: "",
+            },
+            methods: {
+
             },
         });
     </script>
