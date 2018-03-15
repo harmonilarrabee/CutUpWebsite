@@ -12,39 +12,48 @@
     }
     .title{
         font-size: 48px;
-        margin: 10px;
+        margin-top: 10px;
     }
     .instructions{
         font-size: 24px;
     }
     .dropdown{
-        margin-top: 40px;
+        margin-top: 20px;
     }
-    .dropdown-wrapper, .story-wrapper{
+    .wrapper{
         display: flex;
         justify-content: space-around;
     }
     .story{
-      font-size: 14px;
-      margin: 40px;
-      background-color: #ebd5b3;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: stretch;
-      flex: 1;
+        font-size: 14px;
+        margin: 20px;
+        background-color: #ebd5b3;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: stretch;
+        flex: 1;
     }
     .story div{
-      padding: 4px;
-      background-color: #fff5d2;
-      margin: 2px;
-      border: 2px solid black;
-      border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      flex-shrink: 0;
-      flex-grow: 1;
+        padding: 4px;
+        background-color: #fff5d2;
+        margin: 2px;
+        border: 2px solid black;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        flex-grow: 1;
+    }
+    .button{
+        font-size: 24px;
+        padding: 4px;
+        background-color: #dec196;
+        margin: 2px;
+        border: 2px solid black;
+        border-radius: 2px;
+        margin-bottom: 10px;
     }
     </style>
 </head>
@@ -56,10 +65,9 @@
             <div class="instructions">Select two fairy tales, then click the button below to combine them into one cut-up style story.</div>
         </div>
 
-        <div class="dropdown-wrapper">
+        <div class="wrapper">
             <div class="dropdown">
                 <select v-model="titlesOne" @change="switchStoryOne(titlesOne)">
-                    <option disabled value="">Please select a fairy tale</option>
                     <option value=0>Little Red Riding Hood</option>
                     <option value=1>Snow White and the Seven Dwarves</option>
                     <option value=2>Hansel and Gretel</option>
@@ -68,7 +76,6 @@
             </div>
             <div class="dropdown">
                 <select v-model="titlesTwo" @change="switchStoryTwo(titlesTwo)">
-                    <option disabled value="">Please select a fairy tale</option>
                     <option value=0>Little Red Riding Hood</option>
                     <option value=1>Snow White and the Seven Dwarves</option>
                     <option value=2>Hansel and Gretel</option>
@@ -77,16 +84,24 @@
             </div>
         </div>
 
-        <div class="story-wrapper">
+        <div class="wrapper">
             <div class="story">
-                <div class="name">Once upon a time, </div>
                 <div class="storyOne-part" v-for="part in storyOne.parts">{{ part }}</div>
-                <div class="name">they lived happily ever after. </div>
             </div>
             <div class="story">
-                <div class="name">Once upon a time, </div>
-                <div class="storyTWo-part" v-for="part in storyTwo.parts">{{ part }}</div>
-                <div class="name">they lived happily ever after. </div>
+                <div class="storyTwo-part" v-for="part in storyTwo.parts">{{ part }}</div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="button">
+                <div @click="createCutUp(storyOne, storyTwo, storyCutUps)">Make a Cut-Up</div>
+            </div>
+        </div>
+
+        <div class="story-wrapper">
+            <div class="story">
+                <div class="storyCutUps" v-for="storyCutUp in storyCutUps">{{ storyCutUp }}</div>
             </div>
         </div>
     </div>
@@ -97,6 +112,7 @@
         {
             title: "Little Red Riding Hood",
             parts: [
+                "Once upon a time, ",
                 "Little Red Riding Hood went to the forest to ",
                 "visit her sick grandmother. She took some ",
                 "cake and lemonade with her in a basket. She ",
@@ -124,12 +140,14 @@
                 "the woodsman, the grandmother, and Little Red ",
                 "Riding Hood all sat down by the fire and enjoyed ",
                 "cake and lemonade, and ",
+                "they lived happily ever after. ",
             ],
         },
 
         {
             title: "Snow White and the Seven Dwarves",
             parts: [
+                "Once upon a time, ",
                 "there was a queen who named her only daughter ",
                 "Snow White because her skin was so fair and ",
                 "lovely. The queen died, and Snow White's father ",
@@ -161,12 +179,14 @@
                 "day, a prince came by and saw how beautiful Snow ",
                 "White was, and bent down to give her a kiss. Snow ",
                 "White woke up and they were married, and ",
+                "they lived happily ever after. ",
             ],
         },
 
         {
             title: "Hansel and Gretel",
             parts: [
+                "Once upon a time, ",
                 "there were two siblings named Hansel and Gretel. ",
                 "They had poor parents and their family was ",
                 "starving, so they went out in search of food. ",
@@ -195,12 +215,14 @@
                 "filled their pockets with jewels and food and ",
                 "used the trail of bread crumbs to find their way ",
                 "back home, where ",
+                "they lived happily ever after. ",
             ],
         },
 
         {
             title: "Cinderella",
             parts: [
+                "Once upon a time, ",
                 "there was a widower who remarried. His second wife ",
                 "was ill-natured, and she had two daughters who were ",
                 "just as unpleasant as their mother. The man had a ",
@@ -228,6 +250,7 @@
                 "and had every single young girl try on the slipper to ",
                 "see if it fit. The evil step-sisters couldn't fit the ",
                 "slipper, but Cinderella did. The prince married her, and ",
+                "they lived happily ever after. ",
             ],
         },
     ];
@@ -236,6 +259,7 @@
         {
             title: "Little Red Riding Hood",
             parts: [
+                "Once upon a time, ",
                 "Little Red Riding Hood went to the forest to ",
                 "visit her sick grandmother. She took some ",
                 "cake and lemonade with her in a basket. She ",
@@ -263,12 +287,14 @@
                 "the woodsman, the grandmother, and Little Red ",
                 "Riding Hood all sat down by the fire and enjoyed ",
                 "cake and lemonade, and ",
+                "they lived happily ever after. ",
             ],
         },
 
         {
             title: "Snow White and the Seven Dwarves",
             parts: [
+                "Once upon a time, ",
                 "there was a queen who named her only daughter ",
                 "Snow White because her skin was so fair and ",
                 "lovely. The queen died, and Snow White's father ",
@@ -300,12 +326,14 @@
                 "day, a prince came by and saw how beautiful Snow ",
                 "White was, and bent down to give her a kiss. Snow ",
                 "White woke up and they were married, and ",
+                "they lived happily ever after. ",
             ],
         },
 
         {
             title: "Hansel and Gretel",
             parts: [
+                "Once upon a time, ",
                 "there were two siblings named Hansel and Gretel. ",
                 "They had poor parents and their family was ",
                 "starving, so they went out in search of food. ",
@@ -334,12 +362,14 @@
                 "filled their pockets with jewels and food and ",
                 "used the trail of bread crumbs to find their way ",
                 "back home, where ",
+                "they lived happily ever after. ",
             ],
         },
 
         {
             title: "Cinderella",
             parts: [
+                "Once upon a time, ",
                 "there was a widower who remarried. His second wife ",
                 "was ill-natured, and she had two daughters who were ",
                 "just as unpleasant as their mother. The man had a ",
@@ -367,9 +397,12 @@
                 "and had every single young girl try on the slipper to ",
                 "see if it fit. The evil step-sisters couldn't fit the ",
                 "slipper, but Cinderella did. The prince married her, and ",
+                "they lived happily ever after. ",
             ],
         },
     ];
+
+    var storyCutUps = [];
 
         var app = new Vue({
             el: '#app',
@@ -378,6 +411,7 @@
                 titlesTwo: "",
                 storyOne: storyOnes[0],
                 storyTwo: storyTwos[0],
+                storyCutUps: storyCutUps,
             },
             methods: {
                 switchStoryOne: function(delta) {
@@ -388,6 +422,28 @@
                 switchStoryTwo: function(delta) {
                     storyIndex = delta;
                     this.storyTwo = storyTwos[storyIndex];
+                },
+
+                createCutUp: function(storyOne, storyTwo, storyCutUps) {
+                    storyCutUps.length = 0;
+                    for (i = 0; i < storyOne.parts.length; i++) {
+                        var part = storyOne.parts[i];
+                        storyCutUps.push(part);
+                    }
+                    for (i = 0; i < storyTwo.parts.length; i++) {
+                        var part = storyTwo.parts[i];
+                        storyCutUps.push(part);
+                    }
+
+                    var i = 0
+                    , j = 0
+                    , temp = null
+                    for (i = storyCutUps.length - 1; i > 0; i -= 1) {
+                        j = Math.floor(Math.random() * (i + 1));
+                        temp = storyCutUps[i];
+                        storyCutUps[i] = storyCutUps[j];
+                        storyCutUps[j] = temp;
+                    }
                 },
             },
         });
