@@ -6,6 +6,9 @@
       background-color: #ebd5b3;
       margin: 0;
       font-family: Georgia;
+      border: 2px solid black;
+      border-radius: 4px;
+      margin: 2px;
     }
     .header {
         text-align: center;
@@ -13,9 +16,11 @@
     .title{
         font-size: 48px;
         margin-top: 10px;
+        margin-bottom: 10px;
     }
     .instructions{
-        font-size: 24px;
+        font-size: 22px;
+        margin-bottom: 20px;
     }
     .dropdown{
         margin-top: 20px;
@@ -25,7 +30,7 @@
         justify-content: space-around;
     }
     .story{
-        font-size: 14px;
+        font-size: 16px;
         margin: 20px;
         background-color: #ebd5b3;
         display: flex;
@@ -53,7 +58,7 @@
         margin: 2px;
         border: 2px solid black;
         border-radius: 2px;
-        margin-bottom: 10px;
+        margin: 10px;
     }
     </style>
 </head>
@@ -62,7 +67,7 @@
     <div id = "app">
         <div class="header">
             <div class="title">Fairy Tale Cut-Ups</div>
-            <div class="instructions">Select two fairy tales, then click the button below to combine them into one cut-up style story.</div>
+            <div class="instructions">Select two fairy tales from the dropdown menus, then scroll down to click the button below and see them combined into one cut-up style story.</div>
         </div>
 
         <div class="wrapper">
@@ -72,6 +77,7 @@
                     <option value=1>Snow White and the Seven Dwarves</option>
                     <option value=2>Hansel and Gretel</option>
                     <option value=3>Cinderella</option>
+                    <option value=4>Jack and the Beanstalk</option>
                 </select>
             </div>
             <div class="dropdown">
@@ -80,6 +86,7 @@
                     <option value=1>Snow White and the Seven Dwarves</option>
                     <option value=2>Hansel and Gretel</option>
                     <option value=3>Cinderella</option>
+                    <option value=4>Jack and the Beanstalk</option>
                 </select>
             </div>
         </div>
@@ -223,33 +230,79 @@
             title: "Cinderella",
             parts: [
                 "Once upon a time, ",
-                "there was a widower who remarried. His second wife ",
-                "was ill-natured, and she had two daughters who were ",
-                "just as unpleasant as their mother. The man had a ",
-                "beautiful, gentle daughter of his own named Ella, ",
-                "and she was soon to become the servant of her evil ",
-                "step-mother and step-sisters. They made her do all ",
-                "the chores around the house, and they called her ",
-                "Cinderella, after the cinders she swept out of the ",
-                "fireplace. The King needed to find a queen for his ",
-                "prince, so he threw a huge ball. The evil step-mother ",
-                "and step-sisters were invited, but Cinderella was ",
-                "not allowed to go. After they left, Cinderella's ",
-                "fairy godmother appeared and changed her dirty rags ",
-                "into a beautiful gown with glass slippers. Next the ",
-                "fairy godmother changed a pumpkin into a coach and ",
-                "some mice into footmen. Before Cinderella left, the ",
+                "there was a widower who remarried. His second ",
+                "wife was ill-natured, and she had two daughters ",
+                "who were just as unpleasant as their mother. ",
+                "The man had a beautiful, gentle daughter of his ",
+                "own named Ella, and she was soon to become the ",
+                "servant of her evil step-mother and step-",
+                "sisters. They made her do all the chores ",
+                "around the house, and they called her Cinderella, ",
+                "after the cinders she swept out of the ",
+                "fireplace. The King needed to find a queen for ",
+                "his prince, so he threw a huge ball. The evil ",
+                "step-mother and step-sisters were invited, but ",
+                "Cinderella was not allowed to go. After they ",
+                "left, Cinderella's fairy godmother appeared ",
+                "and changed her dirty rags into a beautiful gown ",
+                "with glass slippers. Next the fairy godmother ",
+                "changed a pumpkin into a coach and some mice ",
+                "into footmen. Before Cinderella left, the ",
                 "fairy godmother warned her to be home before ",
-                "midnight, because the spell would only last untill ",
-                "then. Cinderella was a hit at the ball. The prince ",
-                "fell in love with her and asked her name. Just then ",
-                "the clock struck midnight, and Cinderella ran away. ",
-                "She was in such a hurry, she lost one of her glass ",
-                "slippers. It was the only clue the prince had to find ",
-                "his true love. He went to every home in the kingdom ",
-                "and had every single young girl try on the slipper to ",
-                "see if it fit. The evil step-sisters couldn't fit the ",
-                "slipper, but Cinderella did. The prince married her, and ",
+                "midnight, because the spell would only last ",
+                "until then. Cinderella was a hit at the ball. ",
+                "The prince fell in love with her and asked her ",
+                "name. Just then the clock struck midnight, and ",
+                "Cinderella ran away. She was in such a hurry, ",
+                "she lost one of her glass slippers. It was the ",
+                "only clue the prince had to find his true love. ",
+                "He went to every home in the kingdom and had ",
+                "every single young girl try on the slipper to ",
+                "see if it fit. The evil step-sisters couldn't ",
+                "fit the slipper, but Cinderella did. The prince ",
+                "married her, and ",
+                "they lived happily ever after. ",
+            ],
+        },
+
+        {
+            title: "Jack and the Beanstalk",
+            parts: [
+                "Once upon a time, ",
+                "a boy named Jack and his mother were hungry. ",
+                "The cow in the barn gave them milk, but they ",
+                "needed food. Jack's mother said, 'We must sell ",
+                "the cow to get some food.' Jack volunteered to ",
+                "take the cow to town. Along the way, Jack met ",
+                "a farmer who talked him into giving up the cow ",
+                "in exchange for a handful of good luck beans. ",
+                "When Jack returned home, his mother was very ",
+                "cross because they lost their cow for a few ",
+                "beans. She threw the beans out the window and ",
+                "went to bed. The beans began to grow straight ",
+                "up into the sky, so Jack climbed the beanstalk ",
+                "hoping to find good luck at the top. Instead, ",
+                "he found himself in a giant's castle. The giant ",
+                "was counting his money and singing 'fee fie foe ",
+                "fum, I like children in my tum.' The giant's ",
+                "wife helped Jack hide so the giant wouldn't eat ",
+                "him. Then Jack realized something and said, ",
+                "'Hey, this giant stole my father's money!' The ",
+                "giants wife said, 'This magic hen and golden ",
+                "harp used to belong to your father too. Play ",
+                "the harp, and then run!' Jack played the harp, ",
+                "and the giant fell asleep. Jack grabbed the ",
+                "money and the hen and started running. But on ",
+                "the way outside, he knocked over the harp and ",
+                "woke the giant up. The giant chased Jack all ",
+                "the way down the beanstalk chanting 'fee fie ",
+                "foe fum!' When Jack reached the bottom, he ",
+                "chopped down the beanstalk with an ax. The ",
+                "giant was no more. Then the magic hen ",
+                "clucked and laid a golden egg. Jack's mother, ",
+                "awakened by all the noise, took the golden ",
+                "egg, put it with the money, and said, 'Now ",
+                "we'll have something nice to eat, and ",
                 "they lived happily ever after. ",
             ],
         },
@@ -370,33 +423,79 @@
             title: "Cinderella",
             parts: [
                 "Once upon a time, ",
-                "there was a widower who remarried. His second wife ",
-                "was ill-natured, and she had two daughters who were ",
-                "just as unpleasant as their mother. The man had a ",
-                "beautiful, gentle daughter of his own named Ella, ",
-                "and she was soon to become the servant of her evil ",
-                "step-mother and step-sisters. They made her do all ",
-                "the chores around the house, and they called her ",
-                "Cinderella, after the cinders she swept out of the ",
-                "fireplace. The King needed to find a queen for his ",
-                "prince, so he threw a huge ball. The evil step-mother ",
-                "and step-sisters were invited, but Cinderella was ",
-                "not allowed to go. After they left, Cinderella's ",
-                "fairy godmother appeared and changed her dirty rags ",
-                "into a beautiful gown with glass slippers. Next the ",
-                "fairy godmother changed a pumpkin into a coach and ",
-                "some mice into footmen. Before Cinderella left, the ",
+                "there was a widower who remarried. His second ",
+                "wife was ill-natured, and she had two daughters ",
+                "who were just as unpleasant as their mother. ",
+                "The man had a beautiful, gentle daughter of his ",
+                "own named Ella, and she was soon to become the ",
+                "servant of her evil step-mother and step-",
+                "sisters. They made her do all the chores ",
+                "around the house, and they called her Cinderella, ",
+                "after the cinders she swept out of the ",
+                "fireplace. The King needed to find a queen for ",
+                "his prince, so he threw a huge ball. The evil ",
+                "step-mother and step-sisters were invited, but ",
+                "Cinderella was not allowed to go. After they ",
+                "left, Cinderella's fairy godmother appeared ",
+                "and changed her dirty rags into a beautiful gown ",
+                "with glass slippers. Next the fairy godmother ",
+                "changed a pumpkin into a coach and some mice ",
+                "into footmen. Before Cinderella left, the ",
                 "fairy godmother warned her to be home before ",
-                "midnight, because the spell would only last untill ",
-                "then. Cinderella was a hit at the ball. The prince ",
-                "fell in love with her and asked her name. Just then ",
-                "the clock struck midnight, and Cinderella ran away. ",
-                "She was in such a hurry, she lost one of her glass ",
-                "slippers. It was the only clue the prince had to find ",
-                "his true love. He went to every home in the kingdom ",
-                "and had every single young girl try on the slipper to ",
-                "see if it fit. The evil step-sisters couldn't fit the ",
-                "slipper, but Cinderella did. The prince married her, and ",
+                "midnight, because the spell would only last ",
+                "until then. Cinderella was a hit at the ball. ",
+                "The prince fell in love with her and asked her ",
+                "name. Just then the clock struck midnight, and ",
+                "Cinderella ran away. She was in such a hurry, ",
+                "she lost one of her glass slippers. It was the ",
+                "only clue the prince had to find his true love. ",
+                "He went to every home in the kingdom and had ",
+                "every single young girl try on the slipper to ",
+                "see if it fit. The evil step-sisters couldn't ",
+                "fit the slipper, but Cinderella did. The prince ",
+                "married her, and ",
+                "they lived happily ever after. ",
+            ],
+        },
+
+        {
+            title: "Jack and the Beanstalk",
+            parts: [
+                "Once upon a time, ",
+                "a boy named Jack and his mother were hungry. ",
+                "The cow in the barn gave them milk, but they ",
+                "needed food. Jack's mother said, 'We must sell ",
+                "the cow to get some food.' Jack volunteered to ",
+                "take the cow to town. Along the way, Jack met ",
+                "a farmer who talked him into giving up the cow ",
+                "in exchange for a handful of good luck beans. ",
+                "When Jack returned home, his mother was very ",
+                "cross because they lost their cow for a few ",
+                "beans. She threw the beans out the window and ",
+                "went to bed. The beans began to grow straight ",
+                "up into the sky, so Jack climbed the beanstalk ",
+                "hoping to find good luck at the top. Instead, ",
+                "he found himself in a giant's castle. The giant ",
+                "was counting his money and singing 'fee fie foe ",
+                "fum, I like children in my tum.' The giant's ",
+                "wife helped Jack hide so the giant wouldn't eat ",
+                "him. Then Jack realized something and said, ",
+                "'Hey, this giant stole my father's money!' The ",
+                "giants wife said, 'This magic hen and golden ",
+                "harp used to belong to your father too. Play ",
+                "the harp, and then run!' Jack played the harp, ",
+                "and the giant fell asleep. Jack grabbed the ",
+                "money and the hen and started running. But on ",
+                "the way outside, he knocked over the harp and ",
+                "woke the giant up. The giant chased Jack all ",
+                "the way down the beanstalk chanting 'fee fie ",
+                "foe fum!' When Jack reached the bottom, he ",
+                "chopped down the beanstalk with an ax. The ",
+                "giant was no more. Then the magic hen ",
+                "clucked and laid a golden egg. Jack's mother, ",
+                "awakened by all the noise, took the golden ",
+                "egg, put it with the money, and said, 'Now ",
+                "we'll have something nice to eat, and ",
                 "they lived happily ever after. ",
             ],
         },
